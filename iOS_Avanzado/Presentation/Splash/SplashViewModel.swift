@@ -11,15 +11,22 @@ enum SplashState {
     case loading
     case error
     case loaded
+    case existingToken
 }
 
 final class SplashViewModel {
     
     var onStateChanged = Binding<SplashState>()
+    private let sessionDataSource: SessionDataSourcesContract = SessionDataSources()
     
     func load() {
         onStateChanged.update(.loading)
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
+            
+            if (self?.sessionDataSource.hasToken() == true) {
+                self?.onStateChanged.update(.existingToken)
+                return
+            }
             self?.onStateChanged.update(.loaded)
         }
     }

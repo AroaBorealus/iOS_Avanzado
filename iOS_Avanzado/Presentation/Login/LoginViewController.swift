@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         loginButton.isHidden = false
         activityIndicator.stopAnimating()
         errorLabel.isHidden = true
-//        self.present(HomeBuilder().build(), animated: true)
+        self.present(HomeBuilder().build(), animated: true)
     }
         
     private func caseError(_ reason: String) {

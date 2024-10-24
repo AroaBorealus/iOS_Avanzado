@@ -35,6 +35,9 @@ class SplashViewController: UIViewController {
             case .loaded:
                 self?.setAnimation(false)
                 self?.present(LoginBuilder().build(), animated: true)
+            case .existingToken:
+                self?.setAnimation(false)
+                self?.present(HomeBuilder().build(), animated: true)
             case .error:
                 break
             }
