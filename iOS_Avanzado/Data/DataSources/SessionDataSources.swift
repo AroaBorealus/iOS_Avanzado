@@ -5,35 +5,12 @@
 //  Created by Aroa Miguel Garcia on 17/10/24.
 //
 
-//import Foundation
-//
-//protocol SessionDataSourcesContract {
-//    func getSession() -> Data?
-//    func setSession(_ session: Data)
-//}
-//
-//final class SessionDataSources: SessionDataSourcesContract {
-//    private static var token: Data?
-//    
-//    func getSession() -> Data?{
-//        return SessionDataSources.token
-//    }
-//    
-//    func setSession(_ session: Data) {
-//        SessionDataSources.token = session
-//    }
-//}
-
-
-
-
-
 import Foundation
 import KeychainSwift
 
 protocol SessionDataSourcesContract {
     func getSession() -> String?
-    func hasToken() -> Bool
+    func hasSession() -> Bool
     func setSession(_ session: Data)
     func deleteSession()
 }
@@ -49,8 +26,8 @@ final class SessionDataSources: SessionDataSourcesContract {
         keychain.get(kToken)
     }
     
-    func hasToken() -> Bool{
-        guard let tokenExists = keychain.get("kToken") else {
+    func hasSession() -> Bool{
+        guard keychain.get("kToken") != nil else {
             return false
         }
         return true

@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D67E15C52CC92F0000B79AB5 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D67E15C42CC92F0000B79AB5 /* KeychainSwift */; };
+		D6AE56382CCEB17B00D83D94 /* ApiSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56372CCEB17B00D83D94 /* ApiSessionMock.swift */; };
+		D6AE563A2CCEB4E400D83D94 /* LoginUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56392CCEB4E400D83D94 /* LoginUseCaseTests.swift */; };
+		D6AE563C2CCEBAE600D83D94 /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE563B2CCEBAE600D83D94 /* DataMock.swift */; };
+		D6AE563E2CCEBB5400D83D94 /* Characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D6AE563D2CCEBB5400D83D94 /* Characters.json */; };
+		D6AE56402CCEBC1100D83D94 /* Transformations.json in Resources */ = {isa = PBXBuildFile; fileRef = D6AE563F2CCEBC0B00D83D94 /* Transformations.json */; };
+		D6AE56422CCEBC3B00D83D94 /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = D6AE56412CCEBC3400D83D94 /* Locations.json */; };
+		D6AE56D32CCEBD8800D83D94 /* GetAllCharactersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56D22CCEBD8800D83D94 /* GetAllCharactersUseCaseTests.swift */; };
+		D6AE56D52CCEC9B700D83D94 /* GetCharacterTransformationsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56D42CCEC9B700D83D94 /* GetCharacterTransformationsUseCaseTests.swift */; };
+		D6AE56D72CCED33600D83D94 /* GetCharacterLocationsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56D62CCED33600D83D94 /* GetCharacterLocationsUseCaseTests.swift */; };
+		D6AE56DD2CCEDB2C00D83D94 /* GetCaracterUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56DC2CCEDB2C00D83D94 /* GetCaracterUseCaseTests.swift */; };
+		D6AE56DF2CCEE0E000D83D94 /* LoginAPIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56DE2CCEE0E000D83D94 /* LoginAPIRequestTests.swift */; };
+		D6AE56E22CCEE3FA00D83D94 /* GetCharactersAPIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56E12CCEE3FA00D83D94 /* GetCharactersAPIRequestTests.swift */; };
+		D6AE56E42CCEE88500D83D94 /* GetTransformationsAPIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56E32CCEE88500D83D94 /* GetTransformationsAPIRequestTests.swift */; };
+		D6AE56E62CCEE90E00D83D94 /* GetLocationsAPIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AE56E52CCEE90E00D83D94 /* GetLocationsAPIRequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +45,20 @@
 		D67E14E62CBEFE5D00B79AB5 /* iOS_Avanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Avanzado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67E14FC2CBEFE5E00B79AB5 /* iOS_AvanzadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_AvanzadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67E15062CBEFE5E00B79AB5 /* iOS_AvanzadoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_AvanzadoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6AE56372CCEB17B00D83D94 /* ApiSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionMock.swift; sourceTree = "<group>"; };
+		D6AE56392CCEB4E400D83D94 /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
+		D6AE563B2CCEBAE600D83D94 /* DataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMock.swift; sourceTree = "<group>"; };
+		D6AE563D2CCEBB5400D83D94 /* Characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Characters.json; sourceTree = "<group>"; };
+		D6AE563F2CCEBC0B00D83D94 /* Transformations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Transformations.json; sourceTree = "<group>"; };
+		D6AE56412CCEBC3400D83D94 /* Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
+		D6AE56D22CCEBD8800D83D94 /* GetAllCharactersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersUseCaseTests.swift; sourceTree = "<group>"; };
+		D6AE56D42CCEC9B700D83D94 /* GetCharacterTransformationsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterTransformationsUseCaseTests.swift; sourceTree = "<group>"; };
+		D6AE56D62CCED33600D83D94 /* GetCharacterLocationsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterLocationsUseCaseTests.swift; sourceTree = "<group>"; };
+		D6AE56DC2CCEDB2C00D83D94 /* GetCaracterUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCaracterUseCaseTests.swift; sourceTree = "<group>"; };
+		D6AE56DE2CCEE0E000D83D94 /* LoginAPIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIRequestTests.swift; sourceTree = "<group>"; };
+		D6AE56E12CCEE3FA00D83D94 /* GetCharactersAPIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersAPIRequestTests.swift; sourceTree = "<group>"; };
+		D6AE56E32CCEE88500D83D94 /* GetTransformationsAPIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransformationsAPIRequestTests.swift; sourceTree = "<group>"; };
+		D6AE56E52CCEE90E00D83D94 /* GetLocationsAPIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsAPIRequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,11 +78,6 @@
 				D67E150E2CBEFE5E00B79AB5 /* Exceptions for "iOS_Avanzado" folder in "iOS_Avanzado" target */,
 			);
 			path = iOS_Avanzado;
-			sourceTree = "<group>";
-		};
-		D67E14FF2CBEFE5E00B79AB5 /* iOS_AvanzadoTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = iOS_AvanzadoTests;
 			sourceTree = "<group>";
 		};
 		D67E15092CBEFE5E00B79AB5 /* iOS_AvanzadoUITests */ = {
@@ -94,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D67E14E82CBEFE5D00B79AB5 /* iOS_Avanzado */,
-				D67E14FF2CBEFE5E00B79AB5 /* iOS_AvanzadoTests */,
+				D6AE56312CCEB09300D83D94 /* iOS_AvanzadoTests */,
 				D67E15092CBEFE5E00B79AB5 /* iOS_AvanzadoUITests */,
 				D67E14E72CBEFE5D00B79AB5 /* Products */,
 			);
@@ -108,6 +131,59 @@
 				D67E15062CBEFE5E00B79AB5 /* iOS_AvanzadoUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D6AE562D2CCEB09300D83D94 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D6AE56DE2CCEE0E000D83D94 /* LoginAPIRequestTests.swift */,
+				D6AE56E12CCEE3FA00D83D94 /* GetCharactersAPIRequestTests.swift */,
+				D6AE56E32CCEE88500D83D94 /* GetTransformationsAPIRequestTests.swift */,
+				D6AE56E52CCEE90E00D83D94 /* GetLocationsAPIRequestTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D6AE562E2CCEB09300D83D94 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D6AE56392CCEB4E400D83D94 /* LoginUseCaseTests.swift */,
+				D6AE56D22CCEBD8800D83D94 /* GetAllCharactersUseCaseTests.swift */,
+				D6AE56D42CCEC9B700D83D94 /* GetCharacterTransformationsUseCaseTests.swift */,
+				D6AE56D62CCED33600D83D94 /* GetCharacterLocationsUseCaseTests.swift */,
+				D6AE56DC2CCEDB2C00D83D94 /* GetCaracterUseCaseTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D6AE562F2CCEB09300D83D94 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D6AE56412CCEBC3400D83D94 /* Locations.json */,
+				D6AE563F2CCEBC0B00D83D94 /* Transformations.json */,
+				D6AE563D2CCEBB5400D83D94 /* Characters.json */,
+				D6AE56372CCEB17B00D83D94 /* ApiSessionMock.swift */,
+				D6AE563B2CCEBAE600D83D94 /* DataMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D6AE56302CCEB09300D83D94 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D6AE56312CCEB09300D83D94 /* iOS_AvanzadoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6AE562F2CCEB09300D83D94 /* Mocks */,
+				D6AE562D2CCEB09300D83D94 /* Data */,
+				D6AE562E2CCEB09300D83D94 /* Domain */,
+				D6AE56302CCEB09300D83D94 /* Presentation */,
+			);
+			path = iOS_AvanzadoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +224,6 @@
 			);
 			dependencies = (
 				D67E14FE2CBEFE5E00B79AB5 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				D67E14FF2CBEFE5E00B79AB5 /* iOS_AvanzadoTests */,
 			);
 			name = iOS_AvanzadoTests;
 			packageProductDependencies = (
@@ -197,6 +270,7 @@
 					};
 					D67E14FB2CBEFE5E00B79AB5 = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 						TestTargetID = D67E14E52CBEFE5D00B79AB5;
 					};
 					D67E15052CBEFE5E00B79AB5 = {
@@ -241,6 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AE56402CCEBC1100D83D94 /* Transformations.json in Resources */,
+				D6AE563E2CCEBB5400D83D94 /* Characters.json in Resources */,
+				D6AE56422CCEBC3B00D83D94 /* Locations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AE56DD2CCEDB2C00D83D94 /* GetCaracterUseCaseTests.swift in Sources */,
+				D6AE56382CCEB17B00D83D94 /* ApiSessionMock.swift in Sources */,
+				D6AE56D52CCEC9B700D83D94 /* GetCharacterTransformationsUseCaseTests.swift in Sources */,
+				D6AE56E22CCEE3FA00D83D94 /* GetCharactersAPIRequestTests.swift in Sources */,
+				D6AE56E42CCEE88500D83D94 /* GetTransformationsAPIRequestTests.swift in Sources */,
+				D6AE563A2CCEB4E400D83D94 /* LoginUseCaseTests.swift in Sources */,
+				D6AE56DF2CCEE0E000D83D94 /* LoginAPIRequestTests.swift in Sources */,
+				D6AE56E62CCEE90E00D83D94 /* GetLocationsAPIRequestTests.swift in Sources */,
+				D6AE56D32CCEBD8800D83D94 /* GetAllCharactersUseCaseTests.swift in Sources */,
+				D6AE563C2CCEBAE600D83D94 /* DataMock.swift in Sources */,
+				D6AE56D72CCED33600D83D94 /* GetCharacterLocationsUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +389,7 @@
 				DEVELOPMENT_TEAM = 6PFU32ZGFM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS_Avanzado/Supporting Files/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Se requiere permitir la localización del dispositivo para poder mostrarla en el mapa";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -333,6 +422,7 @@
 				DEVELOPMENT_TEAM = 6PFU32ZGFM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS_Avanzado/Supporting Files/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Se requiere permitir la localización del dispositivo para poder mostrarla en el mapa";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -478,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6PFU32ZGFM;
@@ -491,6 +582,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Avanzado.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOS_Avanzado";
@@ -501,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6PFU32ZGFM;

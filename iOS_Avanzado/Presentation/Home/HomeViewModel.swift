@@ -11,6 +11,7 @@ enum HomeStates: Equatable {
     case loading
     case ready
     case error(reason: String)
+    case logout
 }
 
 final class HomeViewModel {
@@ -31,11 +32,25 @@ final class HomeViewModel {
                     self?.onStateChanged.update(.error(reason: "Character array not found"))
                     return
                 }
-                self?.characters = characterArrayUnwrapped
+                self?.characters = characterArrayUnwrapped.sorted{ $0.name < $1.name }
                 self?.onStateChanged.update(.ready)
             case .failure(let error):
                 self?.onStateChanged.update(.error(reason: error.reason))
             }
         }
+    }
+    
+    func logoutProcess(){
+        SessionDataSources.shared.deleteSession()
+        do {
+            try StoreDataProvider.shared.clearBBDD()
+        } catch {
+            
+        }
+        onStateChanged.update(.logout)
+    }
+    
+    func reverseCharacters(){
+        characters.reverse()
     }
 }

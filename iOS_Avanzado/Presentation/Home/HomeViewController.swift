@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let viewModel: HomeViewModel
-//    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorStackView: UIStackView!
@@ -28,17 +27,41 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
+        configureLogoutButton()
+        configureReverseButton()
         
+        bind()
         collectionView.dataSource = self
         collectionView.delegate = self
         
         collectionView.register(CharacterCollectionViewCell.nib, forCellWithReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier)
         
-        navigationController?.navigationBar.topItem?.title = "Home"
+        title = "Home"
         viewModel.load()
     }
     
+    private func configureLogoutButton() {
+        let logoutIcon = UIImage(systemName: "power")
+        let logoutButton = UIBarButtonItem(image: logoutIcon, style: .plain, target: self, action: #selector(logoutButtonTapped))
+        logoutButton.tintColor = .label
+        navigationItem.rightBarButtonItem = logoutButton
+    }
+    
+    @objc func logoutButtonTapped() {
+        viewModel.logoutProcess()
+    }
+    
+    private func configureReverseButton() {
+        let reverseIcon = UIImage(systemName: "arrow.up.arrow.down.square")
+        let reverseButton = UIBarButtonItem(image: reverseIcon, style: .plain, target: self, action: #selector(reverseButtonTapped))
+        reverseButton.tintColor = .label
+        navigationItem.leftBarButtonItem = reverseButton
+    }
+    
+    @objc func reverseButtonTapped() {
+        viewModel.reverseCharacters()
+        collectionView.reloadData()
+    }
     
     func bind(){
         viewModel.onStateChanged.bind { [weak self] state in
@@ -47,6 +70,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self?.caseLoading()
             case .ready:
                 self?.caseReady()
+            case .logout:
+                self?.present(LoginBuilder().build(), animated: true)
             case .error(let reason):
                 self?.caseError(reason)
             }
@@ -103,8 +128,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         let characterFound = viewModel.characters[indexPath.row]
         print("Character found: \(characterFound.name)")
-        let characterInfo = CharacterInfo(characterName: characterFound.name, characterId: characterFound.id)
-        //self.navigationController?.show(CharacterDetailBuilder(characterInfo).build(), sender: nil)
+        self.navigationController?.show(CharacterDetailBuilder(characterFound.id).build(), sender: nil)
     }
     
 }

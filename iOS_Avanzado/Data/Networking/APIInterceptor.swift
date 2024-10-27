@@ -25,7 +25,6 @@ final class APIRequestAuthenticatorInterceptor: APIRequestInterceptorContract {
         guard let token = datasource.getSession() else {
             return
         }
-//        request.setValue("Bearer \(String(decoding: token, as: UTF8.self))", forHTTPHeaderField: "Authorization")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     }

@@ -23,11 +23,17 @@ final class SplashViewModel {
         onStateChanged.update(.loading)
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
             
-            if (self?.sessionDataSource.hasToken() == true) {
+            if (self?.sessionDataSource.hasSession() == true) {
                 self?.onStateChanged.update(.existingToken)
                 return
             }
             self?.onStateChanged.update(.loaded)
         }
+//        do{
+//            try StoreDataProvider.shared.clearBBDD()
+//        } catch{
+//            
+//        }
+//        self.onStateChanged.update(.loaded)
     }
 }

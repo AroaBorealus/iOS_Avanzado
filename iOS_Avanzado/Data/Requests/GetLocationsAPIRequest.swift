@@ -1,17 +1,17 @@
 //
-//  GetTransformationsAPIRequest.swift
+//  GetLocationsAPIRequest.swift
 //  iOS_Avanzado
 //
-//  Created by Aroa Miguel Garcia on 23/10/24.
+//  Created by Aroa Miguel Garcia on 26/10/24.
 //
 
 import Foundation
 
-struct GetTransformationsAPIRequest: APIRequest {
-    typealias Response = [APITransformation]
+struct GetLocationsAPIRequest: APIRequest {
+    typealias Response = [APILocation]
     
     let method: HTTPMethod = .POST
-    let path: String = "/api/heros/tranformations"
+    let path: String = "/api/heros/locations"
     let body: (any Encodable)?
     
     init(characterId: String) {
@@ -19,8 +19,9 @@ struct GetTransformationsAPIRequest: APIRequest {
     }
 }
 
-extension GetTransformationsAPIRequest {
+extension GetLocationsAPIRequest {
     struct RequestEntity: Encodable {
         let id: String
     }
 }
+

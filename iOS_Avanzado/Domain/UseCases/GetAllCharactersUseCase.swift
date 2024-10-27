@@ -8,16 +8,38 @@
 import Foundation
 
 protocol GetAllCharactersUseCaseContract{
+    var storeDataProvider: StoreDataProvider {get set}
     func execute(completion: @escaping (Result<[DBCharacter]?,GetAllCharactersUseCaseError>) -> Void)
 }
 
 
 final class GetAllCharactersUseCase: GetAllCharactersUseCaseContract{
+    var storeDataProvider: StoreDataProvider
+    
+    init(_ storeDataProvider: StoreDataProvider = .shared) {
+        self.storeDataProvider = storeDataProvider
+    }
+    
     func execute(completion: @escaping (Result<[DBCharacter]?, GetAllCharactersUseCaseError>) -> Void) {
         
-        GetCharactersAPIRequest(characterName: "").perform { result in
+        let localCharacters = storeDataProvider.fetchAllCharacters()
+        
+        if !localCharacters.isEmpty {
+            let characters = localCharacters.map({DBCharacter($0)})
+            completion(.success(characters))
+            return
+        }
+        
+        GetCharactersAPIRequest(characterName: "").perform { [weak self] result in
             do {
-                try completion(.success(result.get()))
+                let apiCharacters = try result.get()
+                self?.storeDataProvider.addCharacters(characters: apiCharacters)
+                guard let localCharacters = self?.storeDataProvider.fetchAllCharacters() else{
+                    completion(.failure(GetAllCharactersUseCaseError(reason: "Use Case Failed")))
+                    return
+                }
+                let characters = localCharacters.map({DBCharacter($0)})
+                completion(.success(characters))
             } catch {
                 completion(.failure(GetAllCharactersUseCaseError(reason: "Use Case Failed")))
             }

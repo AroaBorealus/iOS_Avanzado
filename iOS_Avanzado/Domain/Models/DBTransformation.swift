@@ -7,28 +7,18 @@
 
 import Foundation
 
-struct DBTransformation: Decodable{
+struct DBTransformation: Equatable{
     var name: String
     var photo: String
     var id: String
     var description: String
-    let hero: Dictionary<String,String>
-}
-
-struct CustomCodableTransformation: Codable {
-    let nombreCompleto: String
-    let fotoURL: String
-    let id: String
-    let descripcion: String
-    let hero: Dictionary<String,String>
-}
-
-extension CustomCodableTransformation {
-    enum CodingKeys: String, CodingKey {
-        case nombreCompleto = "name"
-        case fotoURL = "photo"
-        case id = "id"
-        case descripcion = "description"
-        case hero = "hero"
+    let characterId: String
+    
+    init(_ coreDBTransformation: CoreDBTransformation) {
+        self.name = coreDBTransformation.name ?? ""
+        self.photo = coreDBTransformation.photo ?? ""
+        self.id = coreDBTransformation.id ?? ""
+        self.description = coreDBTransformation.detail ?? ""
+        self.characterId = coreDBTransformation.character?.id ?? ""
     }
 }

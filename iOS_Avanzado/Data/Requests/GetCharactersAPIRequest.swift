@@ -8,7 +8,7 @@
 import Foundation
 
 struct GetCharactersAPIRequest: APIRequest {
-    typealias Response = [DBCharacter]
+    typealias Response = [APICharacter]
     
     let method: HTTPMethod = .POST
     let path: String = "/api/heros/all"
@@ -19,7 +19,7 @@ struct GetCharactersAPIRequest: APIRequest {
     }
 }
 
-private extension GetCharactersAPIRequest {
+extension GetCharactersAPIRequest {
     struct RequestEntity: Encodable {
         let name: String
     }

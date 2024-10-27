@@ -7,28 +7,28 @@
 
 import Foundation
 
-struct DBCharacter: Decodable{
+struct DBCharacter: Equatable{
     var name: String
     var photo: String
     var id: String
     var description: String
     let favorite: Bool
-}
-
-struct CustomCodableCharacter: Codable {
-    let nombreCompleto: String
-    let fotoURL: String
-    let id: String
-    let descripcion: String
-    let favorito: Bool
-}
-
-extension CustomCodableCharacter {
-    enum CodingKeys: String, CodingKey {
-        case nombreCompleto = "name"
-        case fotoURL = "photo"
-        case id = "id"
-        case descripcion = "description"
-        case favorito = "favorite"
+    
+    init(){
+        self.name = ""
+        self.photo = ""
+        self.id = ""
+        self.description = ""
+        self.favorite = false
     }
+    
+    init(_ coreDBCharacter: CoreDBCharacter) {
+        self.name = coreDBCharacter.name ?? ""
+        self.photo = coreDBCharacter.photo ?? ""
+        self.id = coreDBCharacter.id ?? ""
+        self.description = coreDBCharacter.detail ?? ""
+        self.favorite = coreDBCharacter.favorite
+    }
+    
+    
 }

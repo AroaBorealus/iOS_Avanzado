@@ -9,7 +9,7 @@ import UIKit
 
 class CharacterCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "CharacterCollectionViewCell"
-    static var nib: UINib { UINib(nibName: "CharacterCollectionViewCell", bundle: Bundle(for: CharacterTableViewCell.self)) }
+    static var nib: UINib { UINib(nibName: "CharacterCollectionViewCell", bundle: Bundle(for: CharacterCollectionViewCell.self)) }
     
     @IBOutlet weak var characterImage: AsyncImageView!
     @IBOutlet weak var characterName: UILabel!
