@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TransformationDetailViewController: UIViewController {
 
-    @IBOutlet weak var transformationImage: AsyncImageView!
+    @IBOutlet weak var transformationImage: UIImageView!
     @IBOutlet weak var transformationName: UILabel!
     @IBOutlet weak var transformaitonDescription: UILabel!
     
@@ -41,8 +42,10 @@ class TransformationDetailViewController: UIViewController {
     
     func caseReady(){
         transformationName.text = viewModel.transformation.name
-        transformationImage.setImage(viewModel.transformation.photo)
         transformaitonDescription.text = viewModel.transformation.description
+        
+        let options = KingfisherOptionsInfo([.transition(.fade(0.1)), .forceTransition])
+        transformationImage.kf.setImage(with: URL(string: viewModel.transformation.photo), options: options)
     }
 }
 
